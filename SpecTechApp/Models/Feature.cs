@@ -9,6 +9,7 @@ namespace SpecTechApp.Models
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Name { get; set; }
         public double Value { get; set; }
+        public Guid SignId { get; set; }
         public Sign Sign { get; set; }
     }
 }

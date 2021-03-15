@@ -13,12 +13,12 @@ namespace SpecTechApp.Data
             Database.Migrate();
         }
 
-        public DbSet<User> Users {get;set;}
-        public DbSet<Role> Roles {get;set;}
-        public DbSet<Tech> Techs {get;set;}
-        public DbSet<TypeOfTech> TypeOfTech { get;set;}
-        public DbSet<Quest> Quests {get;set;}
-        public DbSet<Status> Statuses {get;set;}
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Tech> Techs { get; set; }
+        public DbSet<TypeOfTech> TypeOfTech { get; set; }
+        public DbSet<Quest> Quests { get; set; }
+        public DbSet<Status> Statuses { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -29,30 +29,67 @@ namespace SpecTechApp.Data
         {
             modelBuilder.Entity<TypeOfTech>()
                 .HasData(
-                new TypeOfTech { 
-                    Id = new Guid("30FE6C87-4123-4AC4-9F95-F2788CD2B92B"), 
-                    Name = "Кран", 
-                    Feautures = new List<Feature> { 
-                        new Feature { Name = "Длина стрелы", }, 
-                        new Feature {Name = "Грузоподъемность", }, 
-                        new Feature {Name = "Объем двигателя", }, 
-                    } 
+                new TypeOfTech
+                {
+                    Id = new Guid("30FE6C87-4123-4AC4-9F95-F2788CD2B92B"),
+                    Name = "Кран",
+                    Feautures = new List<Feature> {
+                        new Feature {
+                            Name = "Длина стрелы",
+                            Sign = new Sign{Name = "м"} },
+                        new Feature {
+                            Name = "Грузоподъемность",
+                            Sign = new Sign{Name = "т"}}
+                    }
                 },
-                new TypeOfTech { 
+                new TypeOfTech
+                {
                     Id = new Guid("A957CCE7-6B25-4050-9BF9-2EB27D7D71CE"),
-                    Name = "Грузовик" 
+                    Name = "Грузовик",
+                    Feautures = new List<Feature> {
+                        new Feature {
+                            Name = "Объем",
+                            Sign = new Sign{Name = "куб.м"} },
+                        new Feature {
+                            Name = "Грузоподъемность",
+                            Sign = new Sign{Name = "т"}}
+                    }
                 },
-                new TypeOfTech { 
-                    Id = new Guid("C67DFF8E-B2E7-4068-A7F0-5130619F7130"), 
-                    Name = "Бульдозер" 
+                new TypeOfTech
+                {
+                    Id = new Guid("C67DFF8E-B2E7-4068-A7F0-5130619F7130"),
+                    Name = "Бульдозер",
+                    Feautures = new List<Feature> {
+                        new Feature {
+                            Name = "обхем ковша",
+                            Sign = new Sign{Name = "куб.м"} },
+                        new Feature {
+                            Name = "Мощность",
+                            Sign = new Sign{Name = "л.с."}}
+                    }
                 },
-                new TypeOfTech { 
-                    Id = new Guid("516D3CA0-4BDB-488B-A1CB-FCB0174127D3"), 
-                    Name = "Трактор" 
+                new TypeOfTech
+                {
+                    Id = new Guid("516D3CA0-4BDB-488B-A1CB-FCB0174127D3"),
+                    Name = "Трактор",
+                    Feautures = new List<Feature> {
+                        new Feature {
+                            Name = "Мощность",
+                            Sign = new Sign{Name = "л.с."} }
+                    }
                 },
-                new TypeOfTech { 
-                    Id = new Guid("62ABD389-1276-42BD-A6EF-1960CA184258"), 
-                    Name = "Газель" 
+                new TypeOfTech
+                {
+                    Id = new Guid("62ABD389-1276-42BD-A6EF-1960CA184258"),
+                    Name = "Газель",
+                    Feautures = new List<Feature> {
+                        new Feature {
+                            Name = "Объем",
+                            Sign = new Sign{Name = "куб.м"} },
+                        new Feature {
+                            Name = "Грузоподъемность",
+                            Sign = new Sign{Name = "т"}}
+                    }
                 }
                 );
 
@@ -77,10 +114,10 @@ namespace SpecTechApp.Data
 
             modelBuilder.Entity<Sign>()
                 .HasData(
-                    new Sign { Id= new Guid("690BB99A-353C-4A08-9CD9-BD2358997E8E"),Name="л.с." },
-                    new Sign { Id= new Guid("05265039-F6A1-4E9D-B11B-DF30CD608922"),Name="т." },
-                    new Sign { Id= new Guid("541ADBA9-C342-419A-84BA-0570B7E89721"),Name="м." },
-                    new Sign { Id= new Guid("541ADBA9-C342-419A-84BA-0570B7E89721"),Name="л." }
+                    new Sign { Id = new Guid("690BB99A-353C-4A08-9CD9-BD2358997E8E"), Name = "л.с." },
+                    new Sign { Id = new Guid("05265039-F6A1-4E9D-B11B-DF30CD608922"), Name = "т." },
+                    new Sign { Id = new Guid("541ADBA9-C342-419A-84BA-0570B7E89721"), Name = "м." },
+                    new Sign { Id = new Guid("541ADBA9-C342-419A-84BA-0570B7E89721"), Name = "л." }
                 );
 
             base.OnModelCreating(modelBuilder);
