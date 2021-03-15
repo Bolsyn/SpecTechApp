@@ -19,6 +19,8 @@ namespace SpecTechApp.Data
         public DbSet<TypeOfTech> TypeOfTech { get; set; }
         public DbSet<Quest> Quests { get; set; }
         public DbSet<Status> Statuses { get; set; }
+        public DbSet<Feature> Feature { get; set; }
+        public DbSet<Sign> Signs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -36,10 +38,10 @@ namespace SpecTechApp.Data
                     Feautures = new List<Feature> {
                         new Feature {
                             Name = "Длина стрелы",
-                            Sign = new Sign{Name = "м"} },
+                            SignId = Guid.Parse("541ADBA9-C342-419A-84BA-0570B7E89721") },
                         new Feature {
                             Name = "Грузоподъемность",
-                            Sign = new Sign{Name = "т"}}
+                            SignId = Guid.Parse("05265039-F6A1-4E9D-B11B-DF30CD608922")}
                     }
                 },
                 new TypeOfTech
@@ -49,10 +51,10 @@ namespace SpecTechApp.Data
                     Feautures = new List<Feature> {
                         new Feature {
                             Name = "Объем",
-                            Sign = new Sign{Name = "куб.м"} },
+                            SignId = Guid.Parse("541ADBA9-C342-419A-84BA-0570B7E89721")},
                         new Feature {
                             Name = "Грузоподъемность",
-                            Sign = new Sign{Name = "т"}}
+                            SignId = Guid.Parse("05265039-F6A1-4E9D-B11B-DF30CD608922")}
                     }
                 },
                 new TypeOfTech
@@ -61,11 +63,11 @@ namespace SpecTechApp.Data
                     Name = "Бульдозер",
                     Feautures = new List<Feature> {
                         new Feature {
-                            Name = "обхем ковша",
-                            Sign = new Sign{Name = "куб.м"} },
+                            Name = "Объем ковша",
+                            SignId = Guid.Parse("541ADBA9-C342-419A-84BA-0570B7E89721")},
                         new Feature {
                             Name = "Мощность",
-                            Sign = new Sign{Name = "л.с."}}
+                            SignId = Guid.Parse("690BB99A-353C-4A08-9CD9-BD2358997E8E")}
                     }
                 },
                 new TypeOfTech
@@ -75,7 +77,7 @@ namespace SpecTechApp.Data
                     Feautures = new List<Feature> {
                         new Feature {
                             Name = "Мощность",
-                            Sign = new Sign{Name = "л.с."} }
+                           SignId = Guid.Parse("690BB99A-353C-4A08-9CD9-BD2358997E8E")}
                     }
                 },
                 new TypeOfTech
@@ -85,10 +87,10 @@ namespace SpecTechApp.Data
                     Feautures = new List<Feature> {
                         new Feature {
                             Name = "Объем",
-                            Sign = new Sign{Name = "куб.м"} },
+                            SignId = Guid.Parse("541ADBA9-C342-419A-84BA-0570B7E89721")},
                         new Feature {
                             Name = "Грузоподъемность",
-                            Sign = new Sign{Name = "т"}}
+                            SignId = Guid.Parse("05265039-F6A1-4E9D-B11B-DF30CD608922")}
                     }
                 }
                 );
