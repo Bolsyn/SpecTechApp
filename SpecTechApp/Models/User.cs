@@ -10,6 +10,7 @@ namespace SpecTechApp.Models
         public string PhoneNumber { get; set; }
         public string Avatar { get; set; }
         public string Name { get; set; }
+        public Guid RoleId { get; set; }
         public Role Role { get; set; }
     }
 }

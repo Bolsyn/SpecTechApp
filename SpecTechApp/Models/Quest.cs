@@ -8,8 +8,10 @@ namespace SpecTechApp.Models
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Location { get; set; }
+        public Guid TechId { get; set; }
         public Tech Tech { get; set; }
         public int Price { get; set; }
+        public Guid StatusId { get; set; }
         public Status Status { get; set; }
     }
 }
