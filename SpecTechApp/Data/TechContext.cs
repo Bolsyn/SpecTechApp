@@ -22,7 +22,7 @@ namespace SpecTechApp.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server = ; Database = SpecTechApp; Trusted_Connection = true;");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-0V33MK0\\MSSQLSERVER01; Database = SpecTechApp; Trusted_Connection=true;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -53,6 +53,14 @@ namespace SpecTechApp.Data
                         new Role { Id = new Guid("E5DF3611-1E64-420D-87D6-D408B1434481"), Name = "Исполнитель" },
                         new Role { Id = new Guid("F1E4E859-AA75-4B31-9F1C-132621172160"), Name = "Система" },
                         new Role { Id = new Guid("A67FEE06-72A8-469F-A615-ABA1BAF361B3"), Name = "Администратор" }
+                );
+
+            modelBuilder.Entity<Sign>()
+                .HasData(
+                    new Sign { Id= new Guid("690BB99A-353C-4A08-9CD9-BD2358997E8E"),Name="л.с." },
+                    new Sign { Id= new Guid("05265039-F6A1-4E9D-B11B-DF30CD608922"),Name="т." },
+                    new Sign { Id= new Guid("541ADBA9-C342-419A-84BA-0570B7E89721"),Name="м." },
+                    new Sign { Id= new Guid("541ADBA9-C342-419A-84BA-0570B7E89721"),Name="л." }
                 );
 
             base.OnModelCreating(modelBuilder);

@@ -6,9 +6,9 @@ namespace SpecTechApp.Models
 {
     public class Feature
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public string Name { get; set; }
         public double Value { get; set; }
-        public string Sign { get; set; }
+        public Sign Sign { get; set; }
     }
 }
