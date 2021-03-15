@@ -7,6 +7,6 @@ namespace SpecTechApp.Models
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Name { get; set; }
-        public ICollection<Feature> Feauteres { get; set; }
+        public ICollection<Feature> Feautures { get; set; }
     }
 }

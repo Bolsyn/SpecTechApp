@@ -29,11 +29,31 @@ namespace SpecTechApp.Data
         {
             modelBuilder.Entity<TypeOfTech>()
                 .HasData(
-                new TypeOfTech { Id = new Guid("30FE6C87-4123-4AC4-9F95-F2788CD2B92B"), Name = "Кран" },
-                new TypeOfTech { Id = new Guid("A957CCE7-6B25-4050-9BF9-2EB27D7D71CE"), Name = "Грузовик" },
-                new TypeOfTech { Id = new Guid("C67DFF8E-B2E7-4068-A7F0-5130619F7130"), Name = "Бульдозер" },
-                new TypeOfTech { Id = new Guid("516D3CA0-4BDB-488B-A1CB-FCB0174127D3"), Name = "Трактор" },
-                new TypeOfTech { Id = new Guid("62ABD389-1276-42BD-A6EF-1960CA184258"), Name = "Газель" }
+                new TypeOfTech { 
+                    Id = new Guid("30FE6C87-4123-4AC4-9F95-F2788CD2B92B"), 
+                    Name = "Кран", 
+                    Feautures = new List<Feature> { 
+                        new Feature { Name = "Длина стрелы", }, 
+                        new Feature {Name = "Грузоподъемность", }, 
+                        new Feature {Name = "Объем двигателя", }, 
+                    } 
+                },
+                new TypeOfTech { 
+                    Id = new Guid("A957CCE7-6B25-4050-9BF9-2EB27D7D71CE"),
+                    Name = "Грузовик" 
+                },
+                new TypeOfTech { 
+                    Id = new Guid("C67DFF8E-B2E7-4068-A7F0-5130619F7130"), 
+                    Name = "Бульдозер" 
+                },
+                new TypeOfTech { 
+                    Id = new Guid("516D3CA0-4BDB-488B-A1CB-FCB0174127D3"), 
+                    Name = "Трактор" 
+                },
+                new TypeOfTech { 
+                    Id = new Guid("62ABD389-1276-42BD-A6EF-1960CA184258"), 
+                    Name = "Газель" 
+                }
                 );
 
             modelBuilder.Entity<Status>()
